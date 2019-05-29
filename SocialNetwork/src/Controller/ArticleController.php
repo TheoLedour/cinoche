@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Controller;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-
 class ArticleController extends AbstractController
 {
     /**
@@ -15,7 +12,6 @@ class ArticleController extends AbstractController
     {
         return new Response('OMG! My first page already! WOOO!');
     }
-
     /**
      * @Route("/news/{slug}")
      */
@@ -26,9 +22,7 @@ class ArticleController extends AbstractController
             'Woohoo! I\'m going on an all-asteroid diet!',
             'I like bacon too! Buy some from my site! bakinsomebacon.com',
         ];
-        dump($slug, $this);
-
-        return $this->render('articles/show.html.twig', [
+        return $this->render('article/show.html.twig', [
             'title' => ucwords(str_replace('-', ' ', $slug)),
             'comments' => $comments,
         ]);
