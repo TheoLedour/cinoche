@@ -18,7 +18,7 @@ class ArticleController extends AbstractController
      */
     private $isDebug;
 
-    public function __construct(bool $isDebug, Client $slack)
+    public function __construct(bool $isDebug)
     {
         $this->isDebug = $isDebug;
     }
@@ -36,11 +36,11 @@ class ArticleController extends AbstractController
      */
     public function show($slug, MarkdownHelper $markdownHelper, Client $slack)
     {
-        if ($slug === 'khaaaaaan') {
+        if ($slug === 'gandalf') {
             $message = $slack->createMessage()
-                ->from('Khan')
+                ->from('Gandalf')
                 ->withIcon(':ghost:')
-                ->setText('Ah, Kirk, my old friend...');
+                ->setText('YOU SHALL NOT PASS !');
             $slack->sendMessage($message);
         }
 
