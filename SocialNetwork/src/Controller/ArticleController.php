@@ -40,7 +40,7 @@ class ArticleController extends AbstractController
             $message = $slack->createMessage()
                 ->from('Gandalf')
                 ->withIcon(':ghost:')
-                ->setText('YOU SHALL NOT PASS !');
+                ->setText('YOU SHALL NOT SLACK !');
             $slack->sendMessage($message);
         }
 
